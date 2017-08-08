@@ -8,16 +8,11 @@ import './LocaleClock.css';
 const propTypes = {
     tz: PropTypes.string,
     id: PropTypes.number,
-    utc: PropTypes.function,
-    edit: PropTypes.function,
-    remove: PropTypes.function,
 };
 
 const defaultProps = {
     tz: 'Asia/Jerusalem',
     id: 1,
-    edit: console.log,
-    remove: console.log,
     utc: moment()
 };
 
