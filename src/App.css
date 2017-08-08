@@ -29,3 +29,9 @@ body * {
 body {
   margin: 5%;
 }
+
+@media all and (max-width: 375px) {
+  body {
+    margin: 1%;
+  }
+}
