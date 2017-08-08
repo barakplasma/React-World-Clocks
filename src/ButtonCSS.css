@@ -1,0 +1,11 @@
+.removeButton {
+    background-color: red;
+    color: white;
+    border-style: groove;
+}
+
+.editButton {
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: transparent;
+}
