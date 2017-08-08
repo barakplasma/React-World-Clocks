@@ -1,6 +1,25 @@
 import React from 'react';
+import moment from 'moment-timezone';
+import PropTypes from 'prop-types';
+
 import ButtonGroup from './ButtonGroup.js';
 import './LocaleClock.css';
+
+const propTypes = {
+    tz: PropTypes.string,
+    id: PropTypes.number,
+    utc: PropTypes.function,
+    edit: PropTypes.function,
+    remove: PropTypes.function,
+};
+
+const defaultProps = {
+    tz: 'Asia/Jerusalem',
+    id: 1,
+    edit: console.log,
+    remove: console.log,
+    utc: moment()
+};
 
 const LocaleClock = (props) => {
     return <section className="localeClock">
@@ -17,4 +36,9 @@ const LocaleClock = (props) => {
     </section>
 };
 
-export default LocaleClock
+LocaleClock.propTypes = propTypes;
+LocaleClock.defaultProps = defaultProps;
+LocaleClock.contextTypes = propTypes;
+
+
+export default LocaleClock;

@@ -19,3 +19,7 @@ it('shows remove button', () => {
     expect(buttonGroup.contains('Remove')).toEqual(true);
 });
 
+it.skip('example failing test', () => {
+    const buttonGroup = shallow(<ButtonGroup/>);
+    expect(buttonGroup.contains('jfalkejalj')).toEqual(true);
+});
