@@ -4,8 +4,21 @@ import './App.css';
 
 const LocaleClock = (props) => {
     return <section className="localeClock">
-        <div className="time">{props.utc.tz(props.tz).format('HH:MM:ss')}</div>
-        <p className="locationString">{props.tz.split('/').pop().split('_').join(' ')}</p></section>
+        <div className="time">
+            {props.utc.tz(props.tz).format('HH:MM:ss')}
+        </div>
+        <p className="locationString">
+            {props.tz.split('/').pop().split('_').join(' ')}
+        </p>
+        <ButtonGroup />
+    </section>
+};
+
+const ButtonGroup = (props) => {
+    return <div className="buttonGroup">
+        <button>Remove</button>
+        <button>Edit</button>
+    </div>
 };
 
 class App extends Component {
@@ -24,12 +37,12 @@ class App extends Component {
         }
     }
 
-    componentDidMount(){
-        setInterval(()=>this.tick(),500);
+    componentDidMount() {
+        setInterval(() => this.tick(), 500);
     }
 
-    tick(){
-        this.setState({...this.state.timezones,currentTime:moment()})
+    tick() {
+        this.setState({...this.state.timezones, currentTime: moment()})
     }
 
     render() {
@@ -39,7 +52,9 @@ class App extends Component {
                 <div className="currentTime">Current Local Time: {moment().format()}</div>
                 {/*<h2>World Times:</h2>*/}
                 <section className="clockGrid">
-                    {this.state.timezones.map(tz => <LocaleClock key={tz} tz={tz} utc={this.state.currentTime}/>)}
+                    {this.state.timezones.map(tz => <LocaleClock key={tz}
+                                                                 tz={tz}
+                                                                 utc={this.state.currentTime} />)}
                 </section>
             </div>
         );
