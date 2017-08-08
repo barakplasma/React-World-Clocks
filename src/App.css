@@ -4,18 +4,6 @@
   font-weight: 800;
 }
 
-.localeClock {
-  border-radius: .5rem;
-  border: .1rem solid black;
-  width: 33%;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.locationString {
-  /*overflow-wrap: break-word;*/
-}
-
 .clockGrid {
   display: flex;
   flex-flow: row wrap;

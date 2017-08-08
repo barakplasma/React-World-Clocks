@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ButtonGroup from './ButtonGroup.js';
+import './LocaleClock.css';
 
 const LocaleClock = (props) => {
     return <section className="localeClock">
