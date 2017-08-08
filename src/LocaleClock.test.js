@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow, render} from 'enzyme';
 import {expect} from 'chai';
 
 import moment from 'moment-timezone';
@@ -13,14 +12,6 @@ it('renders without crashing', () => {
                                  id="1"
                                  tz="Asia/Omsk"
                                  utc={moment()} />, div);
-});
-
-it.skip('shows edit button', () => {
-    const LocaleClock = render(<LocaleClock key="1"
-                                             id="1"
-                                             tz="Asia/Omsk"
-                                             utc={moment()} />);
-    expect(LocaleClock.contains(':')).toEqual(true);
 });
 
 it('shows time properly', () => {
