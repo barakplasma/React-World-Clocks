@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 // import shortid from 'shortid'; //comes in handy
 import './App.css';
 import LocaleClock from './LocaleClock.js';
+import editClock from './editClock.js';
 
 class App extends Component {
     constructor() {
@@ -18,7 +19,7 @@ class App extends Component {
                 'Australia/Sydney'
             ]
         };
-        this.editClock = this.editClock.bind(this);
+        this.editClock = editClock.bind(this);
         this.removeClock = this.removeClock.bind(this);
     }
 
@@ -28,15 +29,6 @@ class App extends Component {
 
     tick() {
         this.setState({...this.state.timezones, currentTime: moment()})
-    }
-
-    editClock(key) {
-        // console.log('attempted edit of ',key);
-        let newTZ = prompt('Please Enter a new Timezone', 'Asia/Omsk');
-        this.setState({
-            ...this.state.currentTime,
-            ...this.state.timezones.splice(key, 1, newTZ)
-        })
     }
 
     removeClock(key) {
