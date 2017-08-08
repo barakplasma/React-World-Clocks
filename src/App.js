@@ -5,7 +5,7 @@ import './App.css';
 const LocaleClock = (props) => {
     return <section className="localeClock">
         <div className="time">{props.utc.tz(props.tz).format('HH:MM:ss')}</div>
-        in {props.tz}</section>
+        <p className="locationString">in {props.tz.split('/').join(' ')}</p></section>
 };
 
 class App extends Component {
