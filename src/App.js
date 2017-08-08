@@ -2,33 +2,7 @@ import React, {Component} from 'react';
 import moment from 'moment-timezone';
 // import shortid from 'shortid'; //comes in handy
 import './App.css';
-
-const LocaleClock = (props) => {
-    return <section className="localeClock">
-        <div className="time">
-            {props.utc.tz(props.tz).format('HH:MM:ss')}
-        </div>
-        <p className="locationString">
-            {props.tz.split('/').pop().split('_').join(' ')}
-        </p>
-        <ButtonGroup tz={props.tz}
-                     id={props.id}
-                     edit={props.edit}
-                     remove={props.remove} />
-    </section>
-};
-
-const ButtonGroup = (props) => {
-    return <div
-        className="buttonGroup">
-        <button className="removeButton"
-                onClick={() => props.remove(props.id)}>Remove
-        </button>
-        <button className="editButton"
-                onClick={() => props.edit(props.id)}>Edit
-        </button>
-    </div>
-};
+import LocaleClock from './LocaleClock.js';
 
 class App extends Component {
     constructor() {
